@@ -10,6 +10,7 @@ import GetInvolved from './pages/GetInvolved';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   return (
@@ -64,6 +65,11 @@ function App() {
           <Route path="terms" element={
             <PageWrapper title="Terms of Service">
               <TermsOfService title="Terms of Service" />
+            </PageWrapper>
+          } />
+          <Route path="thank-you" element={
+            <PageWrapper title="Message Sent – Thank You">
+              <ThankYou />
             </PageWrapper>
           } />
           {/* Catch all to Home or 404 */}

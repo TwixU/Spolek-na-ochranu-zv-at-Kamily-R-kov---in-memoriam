@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Contact: React.FC<{ title?: string }> = ({ title }) => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const navigate = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -11,8 +13,10 @@ const Contact: React.FC<{ title?: string }> = ({ title }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        alert('Message sent! (Simulation)');
-        setFormData({ name: '', email: '', message: '' });
+        // Simulate API call
+        setTimeout(() => {
+            navigate('/thank-you');
+        }, 500);
     };
 
     return (
